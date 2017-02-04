@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     if (location != null) {
                         double lat = location.getLatitude();
                         double lon = location.getLongitude();
-                        String restAPILink = "https://api.darksky.net/forecast/SECRET_KEY/" + String.valueOf(lat) + "," +
+                        String restAPILink = "https://api.darksky.net/forecast/" + Constants.SECRET_KEY + "/" + String.valueOf(lat) + "," +
                                 String.valueOf(lon) + "?lang=tr&units=si&exclude=[minutely,hourly,daily,alerts,flags]";
                         new DarkSkyAPI().execute(restAPILink);
                     }
