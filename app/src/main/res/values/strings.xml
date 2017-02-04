@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Weather App</string>
+    <string name="GET_WEATHER">Hava Durumunu Getir</string>
+    <string name="TEXT_TEMPERATURE">Sıcaklık :</string>
+    <string name="APPARENT_TEMPERATURE">Hissedilen Sıcaklık :</string>
+    <string name="HUMIDITY">Nem :</string>
+    <string name="WIND_SPEED">Rüzgar Hızı :</string>
+    <string name="SUMMARY">Özet :</string>
+    <string name="PLEASE_WAIT">Lütfen Bekleyin</string>
+    <string name="PRECIP_TYPE">Yağış Tipi :</string>
+    <string name="PRECIP_PROBABILITY">Yağış Olasılığı :</string>
+    <string name="GPS_LOCATION_ERROR">GPS ile alakalı bir hata ile karşılaşıldı!</string>
+    <string name="REST_API_REQUST_ERROR">Bir hata oluştu, lütfen tekrar deneyin!</string>
+</resources>

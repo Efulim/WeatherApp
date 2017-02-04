@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.simurg.weatherapp.MainActivity">
+
+    <Button
+        android:text="@string/GET_WEATHER"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnGetWeather"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:textAllCaps="false" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@string/SUMMARY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLabelSummary"
+                android:layout_weight="0"
+                android:textAlignment="viewEnd" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvSummary"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/second_collumn_left_margin" />
+                <!--android:text="tvSummary"-->
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="@string/TEXT_TEMPERATURE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLabelTemperature"
+                android:layout_weight="0"
+                android:textAlignment="viewEnd" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTemperature"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/second_collumn_left_margin" />
+            <!--android:text="tvTemperature"-->
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@string/APPARENT_TEMPERATURE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLabelApparentTemperature"
+                android:layout_weight="0"
+                android:textAlignment="viewEnd" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvApparentTemperature"
+                android:layout_marginLeft="@dimen/second_collumn_left_margin" />
+            <!--android:text="tvApparentTemperature"-->
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@string/HUMIDITY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLabelHumidity"
+                android:layout_weight="0"
+                android:textAlignment="viewEnd" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvHumidity"
+                android:layout_marginLeft="@dimen/second_collumn_left_margin" />
+            <!--android:text="tvHumidity"-->
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@string/WIND_SPEED"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLabelWindSpeed"
+                android:layout_weight="0"
+                android:textAlignment="viewEnd" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvWindSpeed"
+                android:layout_marginLeft="@dimen/second_collumn_left_margin" />
+            <!--android:text="tvWindSpeed"-->
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@string/PRECIP_TYPE"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLabelPrecipType"
+                android:layout_weight="0"
+                android:textAlignment="viewEnd" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvPrecipType"
+                android:layout_marginLeft="@dimen/second_collumn_left_margin" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="@string/PRECIP_PROBABILITY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvLabelPrecipProbability"
+                android:layout_weight="0"
+                android:textAlignment="viewEnd" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvPrecipProbability"
+                android:layout_marginLeft="@dimen/second_collumn_left_margin" />
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
