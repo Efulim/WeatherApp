@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!--<string name="app_name">Weather App</string>-->
+
     <string name="GET_WEATHER">Hava Durumunu Getir</string>
+
     <string name="TEXT_TEMPERATURE">Sıcaklık :</string>
     <string name="APPARENT_TEMPERATURE">Hissedilen Sıcaklık :</string>
     <string name="HUMIDITY">Nem :</string>
@@ -11,4 +14,11 @@
     <string name="PRECIP_PROBABILITY">Yağış Olasılığı :</string>
     <string name="GPS_LOCATION_ERROR">GPS ile alakalı bir hata ile karşılaşıldı!</string>
     <string name="REST_API_REQUST_ERROR">Bir hata oluştu, lütfen tekrar deneyin!</string>
+
+    <string name="SETTINGS">Ayarlar</string>
+
+    <string name="LANGUAGE">Dil</string>
+    <string name="UNITS">Birim</string>
+    <string name="NOTIFICATION">Bildirim</string>
+    <string name="RIGHT_ARROW"><![CDATA[>]]></string>
 </resources>

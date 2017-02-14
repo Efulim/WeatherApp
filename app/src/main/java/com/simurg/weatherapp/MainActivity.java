@@ -2,15 +2,18 @@ package com.simurg.weatherapp;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +26,10 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
+    // COMPLETED: 06.02.2017 Request DarkSky's restAPI and get Response
+    // COMPLETED: 07.02.2017 Set image for weatherType(icon)
+    // TODO: 08.02.2017 Settings screen 
+    // TODO: 08.02.2017 Periodic weather status notification (for last known gps data)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +55,15 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, getResources().getString(R.string.GPS_LOCATION_ERROR), Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        ImageView ivSettings = (ImageView) findViewById(R.id.ivSettings);
+        ivSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent settings = new Intent(getApplicationContext(), Settings.class);
+                startActivity(settings);
             }
         });
     }
@@ -104,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
                 TextView tvSummary, tvTemperature, tvApparentTemperature,
                         tvHumidity, tvWindSpeed, tvPrecipType;
+                ImageView ivWeatherIcon, ivBackground;
 
                 tvSummary = (TextView) findViewById(R.id.tvSummary);
                 tvSummary.setText(makeString(weatherJSONObject.currently.summary));
@@ -122,6 +139,20 @@ public class MainActivity extends AppCompatActivity {
 
                 tvPrecipType = (TextView) findViewById(R.id.tvPrecipType);
                 tvPrecipType.setText(makeString(String.valueOf(weatherJSONObject.currently.precipType)));
+
+                ivWeatherIcon = (ImageView) findViewById(R.id.ivWeatherIcon);
+                if (Build.VERSION.SDK_INT >= 21) {
+                    ivWeatherIcon.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(weatherJSONObject.currently.getClearedIcon(), "drawable", getPackageName()), null));
+                } else {
+                    ivWeatherIcon.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(weatherJSONObject.currently.getClearedIcon(), "drawable", getPackageName())));
+                }
+
+                ivBackground = (ImageView) findViewById(R.id.ivBackground);
+                if (Build.VERSION.SDK_INT >= 21) {
+                    ivBackground.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(weatherJSONObject.currently.getBackgroundName(), "drawable", getPackageName()), null));
+                } else {
+                    ivBackground.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(weatherJSONObject.currently.getBackgroundName(), "drawable", getPackageName())));
+                }
             } else {
                 Toast.makeText(MainActivity.this, getResources().getString(R.string.REST_API_REQUST_ERROR), Toast.LENGTH_SHORT).show();
             }

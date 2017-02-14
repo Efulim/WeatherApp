@@ -20,18 +20,11 @@ public class WeatherJSONObjectCurrently {
     public float cloudCover; //Bulut örtüsü
     public float pressure; //basınç
     public float ozone; //ozon
+
+    public String getClearedIcon() {
+        return this.icon.replace("-", "_");
+    }
+    public String getBackgroundName() {
+        return "_" + this.icon.replace("-", "_");
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
