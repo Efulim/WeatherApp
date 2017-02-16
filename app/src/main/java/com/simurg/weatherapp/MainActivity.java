@@ -31,16 +31,18 @@ public class MainActivity extends AppCompatActivity {
     // TODO: 08.02.2017 Settings screen 
     // TODO: 08.02.2017 Periodic weather status notification (for last known gps data)
 
+    LocationManager locationManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         Button btnGetWeather = (Button) findViewById(R.id.btnGetWeather);
         btnGetWeather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) &&
                     ContextCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.ACCESS_FINE_LOCATION ) == PackageManager.PERMISSION_GRANTED) {
 
