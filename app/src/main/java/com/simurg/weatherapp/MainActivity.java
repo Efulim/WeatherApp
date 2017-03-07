@@ -28,7 +28,7 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
     // COMPLETED: 06.02.2017 Request DarkSky's restAPI and get Response
     // COMPLETED: 07.02.2017 Set image for weatherType(icon)
-    // TODO: 08.02.2017 Settings screen 
+    // TODO: 08.02.2017 Settings screen
     // TODO: 08.02.2017 Periodic weather status notification (for last known gps data)
 
     LocationManager locationManager;
